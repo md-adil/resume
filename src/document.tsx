@@ -1,6 +1,6 @@
 import React from "react";
 import { header, RESUME_DATA } from "./data";
-import { ResumePreview } from "./components/resume-architect";
+import { ResumePreview } from "./pages/resume-architect";
 import { Document } from "@react-pdf/renderer";
 import { Font } from "@react-pdf/renderer";
 import { fonts } from "./fonts";
