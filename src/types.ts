@@ -22,6 +22,7 @@ export interface Experience {
   current: boolean;
   location: string;
   description: string; // Markdown supported
+  break?: boolean;
 }
 
 export interface Project {

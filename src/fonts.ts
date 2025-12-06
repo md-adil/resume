@@ -1,64 +1,31 @@
-// Font configuration that works in both browser (Vite) and Node.js (tsx)
-// Reference: https://react-pdf.org/fonts
-
 const isNode = typeof process !== "undefined" && process.versions?.node;
 
-// In browser/Vite: Import fonts using ?url to get asset URLs
-// In Node.js: These imports are skipped (tree-shaken out) and we use import.meta.resolve instead
-let interLight: string;
-let interRegular: string;
-let interMedium: string;
-let interSemiBold: string;
-let interBold: string;
-let merriweatherLight: string;
-let merriweatherRegular: string;
-let merriweatherBold: string;
+const fontPaths = {
+  inter: ["300", "400", "500", "600", "700"].map((weight) => `@fontsource/inter/files/inter-latin-${weight}-normal.woff`),
+  merriweather: ["300", "400", "700"].map((weight) => `@fontsource/merriweather/files/merriweather-latin-${weight}-normal.woff`),
+};
 
-if (isNode) {
-  // Node.js: Use import.meta.resolve
-  interLight = new URL(import.meta.resolve("@fontsource/inter/files/inter-latin-300-normal.woff")).pathname;
-  interRegular = new URL(import.meta.resolve("@fontsource/inter/files/inter-latin-400-normal.woff")).pathname;
-  interMedium = new URL(import.meta.resolve("@fontsource/inter/files/inter-latin-500-normal.woff")).pathname;
-  interSemiBold = new URL(import.meta.resolve("@fontsource/inter/files/inter-latin-600-normal.woff")).pathname;
-  interBold = new URL(import.meta.resolve("@fontsource/inter/files/inter-latin-700-normal.woff")).pathname;
+const loadFonts = async () => {
+  if (isNode) {
+    return [...fontPaths.inter, ...fontPaths.merriweather].map((path) => new URL(import.meta.resolve(path)).pathname);
+  } else {
+    const [inter300, inter400, inter500, inter600, inter700, merri300, merri400, merri700] = await Promise.all([
+      import("@fontsource/inter/files/inter-latin-300-normal.woff?url"),
+      import("@fontsource/inter/files/inter-latin-400-normal.woff?url"),
+      import("@fontsource/inter/files/inter-latin-500-normal.woff?url"),
+      import("@fontsource/inter/files/inter-latin-600-normal.woff?url"),
+      import("@fontsource/inter/files/inter-latin-700-normal.woff?url"),
+      import("@fontsource/merriweather/files/merriweather-latin-300-normal.woff?url"),
+      import("@fontsource/merriweather/files/merriweather-latin-400-normal.woff?url"),
+      import("@fontsource/merriweather/files/merriweather-latin-700-normal.woff?url"),
+    ]);
+    return [inter300, inter400, inter500, inter600, inter700, merri300, merri400, merri700].map((m) => m.default);
+  }
+};
 
-  merriweatherLight = new URL(import.meta.resolve("@fontsource/merriweather/files/merriweather-latin-300-normal.woff")).pathname;
-  merriweatherRegular = new URL(import.meta.resolve("@fontsource/merriweather/files/merriweather-latin-400-normal.woff")).pathname;
-  merriweatherBold = new URL(import.meta.resolve("@fontsource/merriweather/files/merriweather-latin-700-normal.woff")).pathname;
-} else {
-  // Browser/Vite: Import with ?url suffix (types defined in vite-env.d.ts)
-  const interLightModule = await import("@fontsource/inter/files/inter-latin-300-normal.woff?url");
-  const interRegularModule = await import("@fontsource/inter/files/inter-latin-400-normal.woff?url");
-  const interMediumModule = await import("@fontsource/inter/files/inter-latin-500-normal.woff?url");
-  const interSemiBoldModule = await import("@fontsource/inter/files/inter-latin-600-normal.woff?url");
-  const interBoldModule = await import("@fontsource/inter/files/inter-latin-700-normal.woff?url");
-
-  const merriweatherLightModule = await import("@fontsource/merriweather/files/merriweather-latin-300-normal.woff?url");
-  const merriweatherRegularModule = await import("@fontsource/merriweather/files/merriweather-latin-400-normal.woff?url");
-  const merriweatherBoldModule = await import("@fontsource/merriweather/files/merriweather-latin-700-normal.woff?url");
-
-  interLight = interLightModule.default;
-  interRegular = interRegularModule.default;
-  interMedium = interMediumModule.default;
-  interSemiBold = interSemiBoldModule.default;
-  interBold = interBoldModule.default;
-
-  merriweatherLight = merriweatherLightModule.default;
-  merriweatherRegular = merriweatherRegularModule.default;
-  merriweatherBold = merriweatherBoldModule.default;
-}
+const [interLight, interRegular, interMedium, interSemiBold, interBold, merriweatherLight, merriweatherRegular, merriweatherBold] = await loadFonts();
 
 export const fonts = {
-  inter: {
-    light: interLight,
-    regular: interRegular,
-    medium: interMedium,
-    semiBold: interSemiBold,
-    bold: interBold,
-  },
-  merriweather: {
-    light: merriweatherLight,
-    regular: merriweatherRegular,
-    bold: merriweatherBold,
-  },
+  inter: { light: interLight!, regular: interRegular!, medium: interMedium!, semiBold: interSemiBold!, bold: interBold! },
+  merriweather: { light: merriweatherLight!, regular: merriweatherRegular!, bold: merriweatherBold! },
 };

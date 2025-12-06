@@ -31,6 +31,7 @@ export const experience: Experience[] = [
     endDate: "May 2017",
     current: false,
     location: "Boston, MA",
+    break: true,
     description:
       "• Developed core backend services for a SaaS logistics platform using Node.js and MongoDB, scaling to support 50k concurrent users.\n• Implemented a real-time analytics pipeline using Apache Kafka and Elasticsearch, providing actionable insights to enterprise customers.\n• Optimized frontend bundle sizes by 60% and improved Core Web Vitals scores, directly contributing to a 15% increase in user retention.\n• Championed Test-Driven Development (TDD) and introduced automated CI/CD pipelines using Jenkins.",
   },

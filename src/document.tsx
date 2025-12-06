@@ -1,5 +1,5 @@
 import React from "react";
-import { RESUME_DATA } from "./data";
+import { header, RESUME_DATA } from "./data";
 import { ResumePreview } from "./components/resume-architect";
 import { Document } from "@react-pdf/renderer";
 import { Font } from "@react-pdf/renderer";
@@ -7,7 +7,7 @@ import { fonts } from "./fonts";
 
 // Register Inter font family
 Font.register({
-  family: "Inter",
+  family: "ui-sans-serif",
   fonts: [
     { src: fonts.inter.light, fontWeight: 300 },
     { src: fonts.inter.regular, fontWeight: 400 },
@@ -19,7 +19,7 @@ Font.register({
 
 // Register Merriweather font family
 Font.register({
-  family: "Merriweather",
+  family: "ui-serif",
   fonts: [
     { src: fonts.merriweather.light, fontWeight: 300 },
     { src: fonts.merriweather.regular, fontWeight: 400 },
@@ -29,7 +29,7 @@ Font.register({
 
 export const App: React.FC = () => {
   return (
-    <Document>
+    <Document author={header.fullName}>
       <ResumePreview data={RESUME_DATA} />
     </Document>
   );
