@@ -1,0 +1,2 @@
+export const summary =
+  "Visionary Technology Leader and Software Architect with over 11 years of experience designing and scaling distributed systems for global enterprises. Proven expertise in cloud-native transformations, microservices architecture, and engineering leadership. Track record of reducing infrastructure costs by 40% while improving system reliability to 99.99%. Passionate about driving technical excellence, mentoring engineering teams, and aligning technology strategy with business goals.";

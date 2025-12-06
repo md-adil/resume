@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "generate": "tsx src/index.ts",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/merriweather": "^5.2.11",
+    "@react-pdf/renderer": "^4.3.1",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-pdf-tailwind": "^3.0.0"
+  }
+}
