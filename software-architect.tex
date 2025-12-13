@@ -1,0 +1,204 @@
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+\iftutex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+\begin{document}
+\name{Md Adil}
+\tagline{Software Architect (Distributed Systems \& Platform Engineering) | Open Source}
+
+\personalinfo{%
+  \email{adil.sudo@gmail.com}
+  \phone{+91 98 1812 8797}
+  \location{Pune, India}
+  \homepage{md-adil.github.io}
+  \linkedin{md-adil}
+  \github{md-adil}
+}
+
+\makecvheader
+
+\cvsection{Profile}
+Software architect with 11+ years of experience owning architecture for consumer-scale
+platforms serving \textbf{1M+ users}. I specialize in \textbf{distributed systems, platform
+engineering, and frontend/backend architecture}, with deep hands-on expertise in Kubernetes
+and cloud-native systems.
+
+\smallskip
+
+I have led \textbf{organization-wide architectural initiatives} — micro-frontend, GitOps,
+observability, and performance optimization — reducing deployment time by \textbf{80\%},
+MTTR by \textbf{85\%}, and infrastructure cost by up to \textbf{40\%}. Active open-source
+contributor (15+ npm packages, 2k+ weekly downloads).
+
+\medskip
+
+\cvsection{Experience}
+
+\cvevent{Sr. Software Architect}{Bajaj Finserv Health}{Jan 2020 -- Ongoing}{Pune, India}
+
+\begin{itemize}
+\item Led Smart Reports \& OCR team, built a document processing platform handles 100K+ medical documents/month.
+\item Built \href{https://design.bajajfinservhealth.in}{Capsule} (in-house UI library) used by 15+ teams, with 99\% Lighthouse score and 2-3× faster development.
+\item Set up micro-frontend architecture and ArgoCD GitOps for 600+ microservices; rebuilt frontend with Next.js for 1M+ users, improved SEO by 300\%.
+\item Cut deployment time from 10min to 2min (80\% reduction) and reduced container size by 99\%.
+\item Created and enforced coding guidelines across the organization.
+\end{itemize}
+
+{\small\cvtag{TypeScript} \cvtag{React} \cvtag{Next.js} \cvtag{Node.js} \cvtag{Kubernetes} \cvtag{ArgoCD} \cvtag{Python}}
+
+\divider
+
+
+\cvevent{Tech Lead \& Full Stack Engineer}{BigRadar}{Apr 2017 -- Oct 2020}{Delhi, India}
+
+\begin{itemize}
+\item Built the SaaS product end-to-end, covering system design, backend, frontend, and deployments.
+\item Designed core system structure and data models for a multi-tenant setup.
+\item Built internal frameworks (MongoDB ORM and Express wrapper) to reduce boilerplate and improve code consistency.
+\item Worked closely with founders to ship features quickly and onboard early customers.
+\end{itemize}
+
+{\small\cvtag{Node.js} \cvtag{React} \cvtag{TypeScript} \cvtag{MongoDB} \cvtag{Express.js}}
+
+\divider
+
+\cvevent{Sr. Software Engineer}{Edunuts}{Aug 2015 -- Apr 2017}{Delhi, India}
+\begin{itemize}
+\item Replaced legacy stack with Laravel \& Slim, made development faster and code easier to maintain.
+\item Optimized MySQL schema and indexes, improved query performance and reduced load failures.
+\item Introduced coding standards and modular architecture.
+\end{itemize}
+{\small\cvtag{PHP} \cvtag{Laravel} \cvtag{Slim} \cvtag{MySQL} \cvtag{Node.js} \cvtag{MongoDB}}
+
+\divider
+
+\cvevent{Foundational Software Engineer}{Early Career – Web \& Freelance Projects}{2013 -- 2015}{Delhi, India}
+
+\begin{itemize}
+\item Started as a freelance frontend developer building websites using
+\textbf{HTML and CSS}, focusing on layout, responsiveness, and usability.
+\item Progressed into full-stack development as a solo developer and senior
+engineer at small companies (\textbf{Apka Akhbar, Guru Infoways}),
+designing and developing complete web platforms.
+\item Built content-driven and e-commerce websites including backend APIs,
+admin panels, and database schemas using
+\textbf{PHP, Laravel, MySQL, and Bootstrap}.
+\end{itemize}
+
+\pagebreak
+
+\cvsection{Technical Expertise}
+
+\begin{paracol}{2}
+\skillsection{Frontend / Web}{TypeScript, React, Next.js, Vue.js, CSS, Tailwind, WebSocket, WebRTC}
+
+\divider
+
+\skillsection{Backend}{Node.js, PHP, Go, Python, Microservices, Nest.js, Laravel}
+
+\divider
+
+\skillsection{DevOps / Cloud}{Kubernetes, Docker, ArgoCD, GitOps, AWS, Azure, GCP}
+
+\switchcolumn
+
+\skillsection{Databases}{MySQL, PostgreSQL, MongoDB, Redis}
+
+\divider
+
+\skillsection{Messaging / Streaming}{Kafka, RabbitMQ, RTMP/HLS}
+
+\divider
+
+\skillsection{Observability / Tools}{Grafana Stack, Prometheus, ELK Stack, Loki, Tempo}
+
+\divider
+
+\skillsection{Build Tools}{Git, Vite, Webpack, Rollup}
+\end{paracol}
+
+% \pagebreak
+\medskip
+\cvsection{Case Studies}
+
+\cvevent{PHP-FPM → Laravel Octane Migration}{EdTech Platform}{}{}
+{\small\textbf{Challenge:}} Slow responses (800ms avg), poor concurrency, high CPU usage with PHP-FPM.
+
+{\small\textbf{Solution:}} Migrated to Laravel Octane + Swoole for async I/O and in-memory caching. Used coroutines, process-level caching, and DB connection pooling.
+
+{\small\textbf{Impact:}} Response times: \textbf{800ms → 40–60ms}, \textbf{5×} concurrency, \textbf{30–40\%} lower infrastructure costs
+
+\divider
+
+\cvevent{Monolith → Microservices Migration}{EdTech \& SaaS Platforms}{}{}
+{\small\textbf{Challenge:}} Monolith caused scaling issues, slow deployments, and delayed feature releases.
+
+{\small\textbf{Solution:}} Gradually migrated to microservices on Kubernetes while keeping the old system running, with full observability.
+
+{\small\textbf{Impact:}} Better fault isolation, independent deployments, service-level scaling
+
+\divider
+
+\cvevent{Real-time Observability Platform}{Clients}{}{}
+{\small\textbf{Challenge:}} Poor visibility in distributed systems; MTTR over 4 hours for critical issues.
+
+{\small\textbf{Solution:}} Built end-to-end observability with tracing, centralized logging, metrics, and Grafana dashboards.
+
+{\small\textbf{Impact:}} MTTR: \textbf{4+ hours → 30 minutes}, \textbf{99.99\%} availability, catch issues before they happen
+
+\medskip
+
+\cvsection{Open Source \& Projects}
+
+\begin{itemize}
+\item \href{https://minima-js.github.io/}{Minima.js} - Modern Node.js framework with functional programming paradigm
+\item \href{https://yacs.in}{YACS} - Real-time chat application without contact sharing (TypeScript, React, MongoDB, Protobuf, WebRTC)
+\item \href{https://www.npmjs.com/package/react-read-otp}{react-read-otp} - React hook for SMS OTP auto-read; \textbf{1k+ weekly downloads}
+\item \href{https://md-adil.github.io/jiq/}{jiq} - CLI tool to query/modify data using JavaScript syntax
+\end{itemize}
+
+\smallskip
+
+15+ packages on \href{https://www.npmjs.com/~adil.sudo}{npmjs.com} with 2k+ weekly downloads
+
+\medskip
+
+\cvsection{Education}
+
+\cvevent{Self-Taught Software Engineering}{Independent Learning}{2010 -- Present}{}
+
+\cvevent{Bachelor of Commerce}{University of Delhi}{2010 -- June 2013}{}
+
+\end{document}

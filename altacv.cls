@@ -128,6 +128,7 @@
 \RequirePackage{dashrule}
 \RequirePackage{multirow,tabularx}
 \RequirePackage{changepage}
+\RequirePackage{paracol}
 
 \setlength{\parindent}{0pt}
 \newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
@@ -497,4 +498,14 @@
     \color{body}%
     \raggedright%
   }
+}
+
+% Custom commands
+
+% Define a macro for skill sections
+\newcommand{\skillsection}[2]{%
+  \textbf{#1}\\[0.1cm]%
+  \foreach \skill in {#2} {%
+    \small{\cvtag{\skill}}%
+  }%
 }

@@ -1,0 +1,14 @@
+{
+    "name": "resume-latex",
+    "version": "1.0.0",
+    "description": "LaTeX Resume - Software Architect",
+    "scripts": {
+        "build": "latexmk -xelatex -synctex=1 -interaction=nonstopmode -file-line-error -pdf software-architect.tex",
+        "predeploy": "npm run build && mkdir -p dist && cp software-architect.pdf dist/",
+        "deploy": "gh-pages -d dist",
+        "clean": "latexmk -C"
+    },
+    "devDependencies": {
+        "gh-pages": "^6.3.0"
+    }
+}
