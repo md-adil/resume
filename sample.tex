@@ -1,0 +1,525 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7.2, 28 August 2024) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and simpleicons packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+% \usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
+\iftutex 
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.tex}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num.tex}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+% \usepackage{academicons}\let\faOrcid\aiOrcid
+\begin{document}
+\name{Md Adil}
+\tagline{Self-taught Software Engineer | Architecting scalable systems and cloud-native platforms.}
+%% You can add multiple photos on the left or right
+% \photoR{2.8cm}{Globe_High}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{adil.sudo@gmail.com}
+  \phone{+91 98 1812 8797}
+  \location{Pune, India}
+  \homepage{md-adil.github.io}
+  % \twitter{@twitterhandle}
+  \xtwitter{@_MdAdil}
+  \linkedin{md-adil}
+  \github{md-adil}
+  
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+% \begin{paracol}{2}
+\cvsection{Experience}
+
+\cvevent{Sr. Software Architect}{Bajaj Finserv Health}{Jan 2020 -- Ongoing}{Pune}
+\begin{itemize}
+\item Leading squad of Smart Reports and OCR with Agentic AI.
+\item An in-house DLS called \textbf{capsule} (\href{https://design.bajajfinservhealth.in}{design.bajajfinservhealth.in})
+\item Introduced \textbf{Micro-frontend} and \textbf{ArgoCD}
+\item Handled security concerns, including addressing DDoS attacks and
+SQL vulnerabilities.
+\item Implemented deployment optimizations resulting in an \textbf{80\%} reduction
+in deployment time and a \textbf{99\%} decrease in ACR size. These enhancements have led to significant cost
+savings and notable improvements in efficiency.
+\item Establishing coding guidelines and ensuring adherence to them
+throughout the organization.
+\end{itemize}
+
+\begin{itemize}
+\item Introduced Next.js \& re-architected the frontend
+\item Designed and developed reusable React hooks and components that
+have gained significant adoption across the organization.
+\item Took ownership of designing and developing B2C and Labs,
+starting from the initial concept and building them entirely from
+scratch.
+\end{itemize}
+\divider
+
+
+\cvevent{Tech Lead \& Full Stack}{BigRadar}{April 2017  -- Oct 2020}{Delhi}
+\begin{itemize}
+
+\item Built a full-fledged application from scratch independently, striving to
+achieve industry standards and optimal performance despite limited
+resources.
+\item Developed a customized ORM solution for MongoDB and optimized a
+wrapper for Express.js, enhancing the efficiency and functionality of
+both technologies.
+\end{itemize}
+
+\divider
+
+\cvevent{Sr. Software Engineer}{Edunuts}{Aug 2015 -- Apr 2017}{Delhi}
+
+Overseeing and enhancing the company's technology stack through
+the strategic selection of appropriate technologies and frameworks.
+
+\medskip
+
+Tech Stack
+\cvtag{PHP}
+\cvtag{Laravel}
+\cvtag{Slim}
+\cvtag{MySQL}
+\cvtag{Node.js}
+\cvtag{MongoDB}
+
+\divider
+
+
+\newpage
+
+
+\textbf{Other Companies:}
+
+\begin{itemize}
+    \item \href{https://apkaakhbar.in/}{Apka Akhbar}
+    \item Bigly Technologies
+    \item GuruInfoways
+\end{itemize}
+
+\cvsection{Case Studies}
+% --- Case Study 1 ---
+\cvevent{PHP-FPM → Laravel Octane Migration}{EdTech Platform}{}{}
+
+\textbf{Tech Stack:} Laravel Octane, Swoole, Redis, MySQL, PHP
+
+\medskip
+
+\textbf{Challenge:}
+Slow responses (800ms avg), poor concurrency, and high CPU usage under PHP-FPM.
+
+\medskip
+
+\textbf{Solution:}
+Migrated to Laravel Octane + Swoole with coroutine execution, process-level caching, and DB connection pooling.
+
+\medskip
+
+\textbf{Outcomes:}
+
+
+\begin{itemize}
+  \item Response times improved from 800ms → 40–60ms
+  \item 5× higher concurrency handling
+  \item 30–40\% infra cost reduction
+\end{itemize}
+\divider
+% --- Case Study 2 ---
+\cvevent{Monolith → Microservices Migration}{EdTech \& SaaS Platforms}{}{}
+
+\textbf{Tech Stack:} Kubernetes, Docker, Node.js, Go, Laravel, Jenkins
+
+\medskip
+
+\textbf{Challenge:}
+Monolith causing scaling issues, slow deployments, and feature delivery delays.
+
+\medskip
+
+\textbf{Solution:}
+Implemented strangler-fig migration to microservices with full observability on Kubernetes.
+
+\medskip
+
+\textbf{Outcomes:}
+\begin{itemize}
+  \item Improved fault isolation across services
+  \item Clear ownership and autonomous deployments
+  \item Independent database + service-level scaling
+\end{itemize}
+\divider
+% --- Case Study 3 ---
+\cvevent{Real-time Observability Platform}{Clients}{}{}
+
+\textbf{Tech Stack:} Grafana, ELK Stack, Loki, Tempo, Prometheus, Kubernetes
+
+\medskip
+
+\textbf{Challenge:}
+Poor visibility in distributed systems; MTTR over 4 hours for critical issues.
+
+\medskip
+
+\textbf{Solution:}
+Built end-to-end observability with tracing, centralized logging, metrics, and Grafana dashboards.
+
+\medskip
+
+\textbf{Outcomes:}
+
+\begin{itemize}
+  \item MTTR reduced from 4+ hours → under 30 minutes
+  \item Achieved 99.99\% availability
+  \item Enabled proactive issue detection before user impact
+\end{itemize}
+
+
+
+\cvsection{Projects}
+
+\cvevent{Yet Another Chatting Software}{\href{https://yacs.in}{yacs.in}}{May 13, 2019}{Hometown}
+
+Talk to anyone without sharing contacts
+
+\medskip
+
+Tech stack \cvtag{Typescript} \cvtag{React} \cvtag{Node.js} \cvtag{MongoDB} \cvtag{Redis} \cvtag{Protobuff}
+
+\divider
+\cvevent{Minimajs}{\href{https://minima-js.github.io/}{minima-js.github.io}}{Sep, 2023}{Pune}
+ MinimaJS is a cutting-edge Node.js framework designed to empower developers to construct contemporary web applications with exceptional efficiency and elegance.
+ 
+\medskip
+
+\begin{itemize}
+    \item Functional Programming
+    \item TypeScript Foundation
+    \item Modern JavaScript Adoption
+    \item Direct Request Access
+\end{itemize}
+
+\divider
+
+\cvevent{jiq (Javascript inline query)}{\href{https://md-adil.github.io/jiq/}{md-adil.github.io/jiq}}{Nov, 2020}{Pune}
+Use existing javascript knowledge to query or modify almost any type data, files and directory.
+\medskip
+
+
+\medskip
+
+% \cvsection{A Day of My Life}
+
+% % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% % \wheelchart{outer radius}{inner radius}{
+% % comma-separated list of value/text width/color/detail}
+\wheelchart{1.5cm}{0.5cm}{%
+  6/8em/accent!30/{Sleep,\\beautiful sleep},
+  3/8em/accent!40/Learn,
+  8/8em/accent!60/Daytime job,
+  2/10em/accent/Gym and relaxation,
+  5/6em/accent!20/Spending time with family
+}
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+% \newpage
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+% \switchcolumn
+
+\cvsection{My Life Philosophy}
+
+With 11+ years across backend engineering, cloud infrastructure, performance optimization, and developer tooling, I specialize in designing and implementing end-to-end solutions that scale.
+
+
+\cvsection{Most Proud of}
+
+\cvachievement{\faTrophy}{Design Language System (\href{https://design.bajajfinservhealth.in/}{Capsule})}{Architected and development of Capsule — a scalable design system used across Bajaj Finserv Health products, achieved 99\% lighthouse score.}
+
+\cvachievement{\faTrophy}{Architecture}{
+Built scalable cloud-native architectures (1M+ users), led microservices modernization, created full K8s + GitOps platforms, solved end-to-end engineering problems, and built widely-used open-source tools.
+
+}
+
+\cvsection{Strengths}
+
+\begin{itemize}
+    \item Self-Taught \& Passionate
+    \item Open Source Contributor \& Creative Technologist
+    \item Tooling \& Automation
+    \item Technical Leadership
+    \item Security-First Thinking
+    \item DevOps \& Deployment Optimization
+    \item Deep understanding of scalable system architecture.
+    \item Quick Learner - I can learn anything.
+\end{itemize}
+
+\cvsection{Technology}
+
+\textbf{Frontend}
+
+\smallskip
+
+\cvtag{TypeScript}
+\cvtag{JavaScript}
+\cvtag{React}
+\cvtag{Next.js}
+\cvtag{Vue.js}
+\cvtag{Socket.io}
+\cvtag{WebRTC}
+
+\divider
+
+\textbf{Backend}
+
+\smallskip
+
+\cvtag{Node.js}
+\cvtag{Express.js}
+\cvtag{Nest.js}
+\cvtag{Objection.js}
+\cvtag{Mongoose}
+\cvtag{PHP}
+\cvtag{Laravel}
+\cvtag{Slim}
+
+\divider
+
+\textbf{Styling \& UI}
+
+\smallskip
+
+\cvtag{CSS}
+\cvtag{SASS}
+\cvtag{Tailwind}
+\cvtag{Bootstrap}
+
+\divider
+\newpage
+\textbf{DevOps / Cloud}
+
+\smallskip
+
+\cvtag{Docker}
+\cvtag{Kubernetes}
+\cvtag{AWS}
+\cvtag{Azure}
+\cvtag{GCP}
+\cvtag{Nginx}
+\cvtag{Azure Pipeline}
+\cvtag{Github Actions}
+
+\divider
+
+\textbf{Databases}
+
+\smallskip
+
+\cvtag{MySQL}
+\cvtag{PostgreSQL}
+\cvtag{MongoDB}
+\cvtag{Redis}
+
+\divider
+
+\textbf{Messaging / Streaming}
+
+\smallskip
+
+\cvtag{Kafka}
+\cvtag{RabbitMQ}
+\cvtag{RTMP}
+\cvtag{HLS}
+
+\divider
+
+\textbf{Observability}
+
+\smallskip
+
+\cvtag{Grafana}
+\cvtag{Prometheus}
+\cvtag{ELK Stack}
+\cvtag{Loki}
+\cvtag{Tempo}
+
+
+\divider
+
+
+Least Experience 
+\medskip
+
+\cvtag{C++}
+\cvtag{Embedded systems programming}
+\cvtag{React Native}
+\cvtag{Arduino}
+\cvtag{Python}
+\cvtag{Electron}
+
+\cvsection{Tools}
+\cvtag{Git} \cvtag{Webpack} \cvtag{Rollup} \cvtag{Vite}
+
+\newpage
+
+\cvsection{Education}
+
+\cvevent{SOFTWARE ENGINEERING}{School of Internet}{2010 -- Still Learning}{}
+
+\divider
+
+\cvevent{BACHELOR OF COMMERCE}{University of Delhi}{2010 -- June 2013}{}
+
+\cvsection{Open source}
+
+I enjoy building tools that solve real developer problems — this mindset naturally led me to open-source.
+Notable projects include:
+
+\medskip
+
+\begin{itemize}
+    \item \href{https://minima-js.github.io/}{Minimajs}
+    \item \href{https://www.npmjs.com/package/react-read-otp}{react-read-otp} (\~1k weekly downloads)
+    \item \href{https://www.npmjs.com/package/ebx}{ebx}
+\end{itemize}
+
+\smallskip
+
+\href{https://github.com}{Explore 150+ on Github}
+
+\smallskip
+
+Over \textbf{15 Packages} on \href{https://www.npmjs.com/~adil.sudo}{Npmjs}
+
+
+
+\cvsection{Hobbies \& Interests}
+
+\begin{itemize}
+    \item \textbf{Programming as a Hobby} – I enjoy experimenting with new technologies,
+building side projects, and exploring open-source contributions beyond
+work.
+    \item \textbf{Movies \& Storytelling} – I appreciate well-crafted narratives, which also
+inspires my interest in user experience and product design.
+    \item \textbf{Logic Puzzles & Brain Teasers} – Keeps my problem-solving sharp and
+helps me think outside the box in debugging and systems design.
+\end{itemize}
+% \end{paracol}
+
+
+\end{document}
