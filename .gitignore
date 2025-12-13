@@ -1,16 +1,4 @@
 /node_modules
 .DS_Store
 /dist
-*.aux
-*.bbl
-*.blg
-*.bcf
-*.fdb_latexmk
-*.fls
-*.log
-*.out
-*.run.xml
-*.synctex.gz
-*.xmpi
-*.pdf
-latexmkrc
+/build
