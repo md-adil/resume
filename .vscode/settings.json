@@ -1,0 +1,37 @@
+{
+    "editor.formatOnSave": false,
+
+    // Better error/warning display
+    "latex-workshop.message.error.show": true,
+    "latex-workshop.message.warning.show": true,
+
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+
+    // View errors in Problems tab
+    "latex-workshop.latex.build.forceRecipeUsage": false,
+
+    // Use latexmk with XeLaTeX - smart build automation
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-xelatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        }
+    ],
+
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (XeLaTeX)",
+            "tools": ["latexmk"]
+        }
+    ],
+
+    "latex-workshop.latex.autoBuild.run": "onSave"
+}
